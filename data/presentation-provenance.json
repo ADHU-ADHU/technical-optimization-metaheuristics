@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "Presentation V3.0.pptx",
+    "size_bytes": 33610533,
+    "sha256": "49406d3f5913249ba2784c174ad9bb3631757e55e2f0c2477c6d6f947977ca18",
+    "slide_count": 48,
+    "embedded_3d_object_size_bytes": 30508916
+  },
+  "published": {
+    "path": "docs/presentation/technical-optimization-slides.pdf",
+    "size_bytes": 2374571,
+    "sha256": "903102de9ffaf4c4436f0afa51aa565f727defea2993f482a1e41c338388990c",
+    "page_count": 48,
+    "format": "PDF 1.7"
+  },
+  "conversion": {
+    "application": "LibreOffice Impress",
+    "version": "24.2",
+    "operation": "Export supplied presentation to static PDF",
+    "original_presentation_credits_retained": true,
+    "slide_text_or_historical_results_rewritten": false,
+    "limitations": [
+      "The cover's embedded 3D object is static in the PDF.",
+      "Interactive presentation effects are not retained in the PDF."
+    ]
+  },
+  "review": {
+    "slide_and_page_counts_match": true,
+    "all_48_pages_reviewed_as_contact_sheet": true,
+    "matlab_or_excel_solver_executed": false
+  }
+}

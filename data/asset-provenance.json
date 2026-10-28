@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "description": "Provenance for derived project charts and recorded data. Original source files remain unchanged.",
+  "assets": [
+    {
+      "destination": "docs/assets/assembly-ga-recorded-uniform.png",
+      "sha256": "9c21ea3d9ddf2d0fcd211c84b4f3f3d72b9a53027cf795962d317eb018357cff",
+      "size_bytes": 85775,
+      "source": {
+        "file": "Presentation V3.0.pptx",
+        "sha256": "49406d3f5913249ba2784c174ad9bb3631757e55e2f0c2477c6d6f947977ca18",
+        "slide_1based": 20,
+        "embedded_image": "ppt/media/image46.png",
+        "embedded_image_sha256": "889964f1e1146cbcf9e8201fdcfac567c09fc08aca7dbf654bcb8813feb70bf5"
+      },
+      "derivation": {
+        "method": "Render a crop of slide 20 through the LibreOffice PDF export using pdftoppm; preserve recorded chart content on an opaque background. No numerical data reconstructed.",
+        "intermediate_pdf": "Presentation V3.0.pdf",
+        "intermediate_pdf_sha256": "903102de9ffaf4c4436f0afa51aa565f727defea2993f482a1e41c338388990c",
+        "pdf_page_1based": 20,
+        "render_dpi": 144,
+        "crop_pixels": {
+          "x": 21,
+          "y": 344,
+          "width": 922,
+          "height": 639
+        }
+      },
+      "interpretation": "Archived presentation plot; not a newly executed experiment."
+    },
+    {
+      "destination": "docs/assets/assembly-ga-recorded-reversal.png",
+      "sha256": "5a8098f46bcbbab61ad56689e6d7e5b20822491a79d8435a271c918ab65bcdc8",
+      "size_bytes": 128374,
+      "source": {
+        "file": "Presentation V3.0.pptx",
+        "sha256": "49406d3f5913249ba2784c174ad9bb3631757e55e2f0c2477c6d6f947977ca18",
+        "slide_1based": 20,
+        "embedded_image": "ppt/media/image47.png",
+        "embedded_image_sha256": "358acd50675ad8d56f5d1ecd6026e40b2b038be2658d26283669599130a8337b"
+      },
+      "derivation": {
+        "method": "Render a crop of slide 20 through the LibreOffice PDF export using pdftoppm; preserve recorded chart content on an opaque background. No numerical data reconstructed.",
+        "intermediate_pdf": "Presentation V3.0.pdf",
+        "intermediate_pdf_sha256": "903102de9ffaf4c4436f0afa51aa565f727defea2993f482a1e41c338388990c",
+        "pdf_page_1based": 20,
+        "render_dpi": 144,
+        "crop_pixels": {
+          "x": 1042,
+          "y": 344,
+          "width": 832,
+          "height": 625
+        }
+      },
+      "interpretation": "Archived presentation plot; not a newly executed experiment."
+    },
+    {
+      "destination": "data/recorded-pso-convergence.csv",
+      "sha256": "c338a9f1aa95fd06b9a90b63fe70508f1dc65fe714d22d18badffacb077b6370",
+      "size_bytes": 2342,
+      "source": {
+        "file": "data/supermarket-pso-convergence.fig",
+        "sha256": "cc68ac85486da6fb743d68f3c8c85391647b35fe8e86aa115f03d3c225b3dc01",
+        "matlab_graphics_property_path": "hgS_070000.children.children[0].properties.XData / YData"
+      },
+      "derivation": {
+        "method": "Read saved XData/YData with scipy.io.loadmat; write exact recorded pairs to CSV and replot with Matplotlib. No MATLAB or optimization executed.",
+        "recorded_points": 200,
+        "first_recorded_value": "Inf",
+        "first_finite_iteration": 2,
+        "first_finite_cost": 8680.8,
+        "final_recorded_cost": 8071.2,
+        "first_iteration_at_final_cost": 36,
+        "csv_includes_initial_infinite_value": true,
+        "png_omits_infinite_value": true,
+        "validation": "CSV reread exactly equals all original 200 X/Y pairs, including Inf."
+      },
+      "interpretation": "Single archived run. The figure does not contain assignments or capacity loads and cannot establish feasibility, global optimality or comparative performance."
+    },
+    {
+      "destination": "docs/assets/supermarket-pso-convergence.png",
+      "sha256": "f8543de4d365968a5feee35422dab32a7184caac31728129e7f1747c34bd1f0f",
+      "size_bytes": 141149,
+      "source": {
+        "file": "data/supermarket-pso-convergence.fig",
+        "sha256": "cc68ac85486da6fb743d68f3c8c85391647b35fe8e86aa115f03d3c225b3dc01",
+        "matlab_graphics_property_path": "hgS_070000.children.children[0].properties.XData / YData"
+      },
+      "derivation": {
+        "method": "Read saved XData/YData with scipy.io.loadmat; write exact recorded pairs to CSV and replot with Matplotlib. No MATLAB or optimization executed.",
+        "recorded_points": 200,
+        "first_recorded_value": "Inf",
+        "first_finite_iteration": 2,
+        "first_finite_cost": 8680.8,
+        "final_recorded_cost": 8071.2,
+        "first_iteration_at_final_cost": 36,
+        "csv_includes_initial_infinite_value": true,
+        "png_omits_infinite_value": true,
+        "validation": "CSV reread exactly equals all original 200 X/Y pairs, including Inf."
+      },
+      "interpretation": "Single archived run. The figure does not contain assignments or capacity loads and cannot establish feasibility, global optimality or comparative performance."
+    }
+  ]
+}

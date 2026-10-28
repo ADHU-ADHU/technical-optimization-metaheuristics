@@ -1,0 +1,14 @@
+*.asv
+*.autosave
+*.m~
+*.mex*
+slprj/
+codegen/
+__pycache__/
+.venv/
+.DS_Store
+Thumbs.db
+outputs/
+.env
+.env.*
+!.env.example

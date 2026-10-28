@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "source": "User-supplied Technical Optimisation folder",
+  "files": [
+    {
+      "source_archive_entry": "Assembley_line (1)/Assembley_line/changed_crossover_probablity.m",
+      "destination": "src/assembly_line_ga/changed_crossover_probablity.m",
+      "size_bytes": 13187,
+      "sha256": "5991f3fa1277a281423b57724e075cdbf039a52bb232772b2adce8fdad9720d6",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Assembley_line (1)/Assembley_line/inversemutation_with_unifcorssover.m",
+      "destination": "src/assembly_line_ga/inversemutation_with_unifcorssover.m",
+      "size_bytes": 12626,
+      "sha256": "9b4dc100bcd53b025bb8b1958ae6f4069a654c9e9ef2de6e05db7482aa0e7e9a",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Assembley_line (1)/Assembley_line/towpointcrossover.m",
+      "destination": "src/assembly_line_ga/towpointcrossover.m",
+      "size_bytes": 13835,
+      "sha256": "93663099404f541b60873dd53322e97d3516005eaad857ede07f85589d3656a6",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Assembley_line (1)/Assembley_line/uniformcrossover.m",
+      "destination": "src/assembly_line_ga/uniformcrossover.m",
+      "size_bytes": 13364,
+      "sha256": "11ee7eff698340e2c6501aed58b853edc8a541c8dabb10a469e91a26352a6a50",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Supermarket loccalization problem/Supermarket loccalization problem/Exponential2.m",
+      "destination": "src/supermarket_sa/Exponential2.m",
+      "size_bytes": 10030,
+      "sha256": "d40bc742b5773b8e55fc25fc86eaf65e565dcee6e8e913deb1c1cf7fc9d7e0d1",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Supermarket loccalization problem/Supermarket loccalization problem/Exponential_Cooling.m",
+      "destination": "src/supermarket_sa/Exponential_Cooling.m",
+      "size_bytes": 10037,
+      "sha256": "feae785e057a24e9f1318402b2546b7cc164742f1b66a9c5fb5cad1a1f26a4ae",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Supermarket loccalization problem/Supermarket loccalization problem/Hyperbolic.m",
+      "destination": "src/supermarket_sa/Hyperbolic.m",
+      "size_bytes": 10030,
+      "sha256": "24b8e26c4c6b38a02734cac3f5281414b854189dd52f6093ae3f187e019e7333",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Supermarket loccalization problem/Supermarket loccalization problem/fastcooling.m",
+      "destination": "src/supermarket_sa/fastcooling.m",
+      "size_bytes": 10474,
+      "sha256": "74e4dd1c90e326ce658177a87c5dd372448f69b6da80b95bfed64af326dad617",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Supermarket loccalization problem/Supermarket loccalization problem/linearcooling.m",
+      "destination": "src/supermarket_sa/linearcooling.m",
+      "size_bytes": 10055,
+      "sha256": "40956fc57ff8dd932c21d36f64eb003125419e58712f78a92cbbe5cd9948cea2",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Supermarket loccalization problem/Supermarket loccalization problem/reversemutation.m",
+      "destination": "src/supermarket_sa/reversemutation.m",
+      "size_bytes": 10990,
+      "sha256": "b77f5b73a3009c31f2db02427044921dfc877e162a022b23e08047a33ff31ea1",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Supermarket loccalization problem/Supermarket loccalization problem/withmutation.m",
+      "destination": "src/supermarket_sa/withmutation.m",
+      "size_bytes": 10660,
+      "sha256": "b5fdf4508b40db096cdef4eb1318352c1d820a5504c4a76dd14b94cd0e3df3a6",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Supermarket_localization  in swarm Algorithm (1)/Supermarket_localization  in swarm Algorithm/supermarket_swarm_optimization.m",
+      "destination": "src/supermarket_pso/supermarket_swarm_optimization.m",
+      "size_bytes": 8144,
+      "sha256": "7738adc711a9f88fba0ce11e2c26a4c8b523d5ff7aaaaf35371200f53c7af193",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "part 3/part 3/optimization_assignment.m",
+      "destination": "src/steelmaking_lp/optimization_assignment.m",
+      "size_bytes": 1303,
+      "sha256": "bfabebaaea2291451416b48af0de0a530de6c6c088415fe31d21f3a3df4fb977",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "part 3/part 3/optimization_assignment_different_formulation.m",
+      "destination": "src/steelmaking_lp/optimization_assignment_different_formulation.m",
+      "size_bytes": 1307,
+      "sha256": "db586ed2591579c29caebb1e37a2888b76cb9450ddb4b38ab37fa199c6e74765",
+      "change": "none"
+    },
+    {
+      "source_archive_entry": "Supermarket_localization  in swarm Algorithm (1)/Supermarket_localization  in swarm Algorithm/Cost vs Iterations.fig",
+      "destination": "data/supermarket-pso-convergence.fig",
+      "size_bytes": 27758,
+      "sha256": "cc68ac85486da6fb743d68f3c8c85391647b35fe8e86aa115f03d3c225b3dc01",
+      "change": "none"
+    }
+  ]
+}

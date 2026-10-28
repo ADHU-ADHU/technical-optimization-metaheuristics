@@ -1,0 +1,23 @@
+{
+  "source_archive": "part3/part 3.zip",
+  "source_member": "part 3/Optimimization assignment.xlsx",
+  "published_path": "data/steelmaking-production-plan.xlsx",
+  "original_sha256": "e3c5d8ee45e215b9024a4ac2bb8de3451258dc5e9d633b45d50a2577c94bbe24",
+  "published_sha256": "b47d53777fbea75b2e8687102d53ac5102ba4ead75120c9556e95d7451d96342",
+  "change": {
+    "zip_entry": "xl/workbook.xml",
+    "removed_element": "x15ac:absPath",
+    "namespace": "http://schemas.microsoft.com/office/spreadsheetml/2010/11/ac",
+    "removed_count": 1,
+    "reason": "Remove saved absolute local/network directory metadata before publication.",
+    "scope": "One metadata element only. All other ZIP entry payloads are byte-identical, including sheets, formulas, cached results, styles, and Solver named configuration."
+  },
+  "validation": {
+    "zip_integrity": "passed",
+    "entry_names_and_order_preserved": true,
+    "changed_entries": [
+      "xl/workbook.xml"
+    ],
+    "matlab_or_excel_solver_executed": false
+  }
+}

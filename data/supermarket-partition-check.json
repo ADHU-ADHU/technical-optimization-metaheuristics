@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "method": "Exhaustive enumeration with exact integer tenth-unit costs",
+  "scope": "Nonempty contiguous workstation groups assigned in order to the first k supermarket sites, matching the baseline PSO decoder. This does not establish an optimum for unrestricted site subsets or arbitrary workstation assignments.",
+  "matlab_executed": false,
+  "source": {
+    "path": "src/supermarket_pso/supermarket_swarm_optimization.m",
+    "sha256": "7738adc711a9f88fba0ce11e2c26a4c8b523d5ff7aaaaf35371200f53c7af193"
+  },
+  "model_inputs": {
+    "stations": 30,
+    "sites": 5,
+    "capacity": 60,
+    "demand": [
+      7,
+      7,
+      10,
+      1,
+      7,
+      9,
+      4,
+      5,
+      4,
+      6,
+      6,
+      3,
+      9,
+      1,
+      5,
+      3,
+      5,
+      9,
+      6,
+      3,
+      5,
+      9,
+      9,
+      9,
+      9,
+      3,
+      9,
+      5,
+      8,
+      10
+    ],
+    "installation_cost_tenths": 10000,
+    "shipment_unit_cost": 1,
+    "coordinates_tenths": {
+      "xw": [
+        0,
+        20,
+        40,
+        60,
+        80,
+        100,
+        120,
+        140,
+        160,
+        180,
+        200,
+        220,
+        240,
+        260,
+        280,
+        300,
+        320,
+        340,
+        360,
+        380,
+        400,
+        420,
+        440,
+        460,
+        480,
+        500,
+        520,
+        540,
+        560,
+        580
+      ],
+      "yw": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Xs": [
+        58,
+        174,
+        290,
+        406,
+        522
+      ],
+      "Ys": [
+        50,
+        50,
+        50,
+        50,
+        50
+      ]
+    }
+  },
+  "capacity_lower_bound_open_sites": 4,
+  "excluded_smaller_site_counts": [
+    1,
+    2,
+    3
+  ],
+  "exclusion_reason": "Combined capacity is below total demand",
+  "partitions_examined": 27405,
+  "capacity_feasible_partitions": 3636,
+  "results_by_open_site_count": [
+    {
+      "open_sites": 4,
+      "partitions_examined": 3654,
+      "capacity_feasible_partitions": 121,
+      "optimal_partition_count": 1,
+      "best": {
+        "total_cost_tenths": 85248,
+        "total_cost": 8524.8,
+        "shipment_cost_tenths": 45248,
+        "shipment_cost": 4524.8,
+        "installation_cost": 4000.0,
+        "cuts_after_station_1based": [
+          6,
+          13,
+          23
+        ],
+        "station_groups_1based_inclusive": [
+          [
+            1,
+            6
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            24,
+            30
+          ]
+        ],
+        "supermarket_loads": [
+          41,
+          37,
+          55,
+          53
+        ],
+        "open_site_indices_1based": [
+          1,
+          2,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "open_sites": 5,
+      "partitions_examined": 23751,
+      "capacity_feasible_partitions": 3515,
+      "optimal_partition_count": 1,
+      "best": {
+        "total_cost_tenths": 80712,
+        "total_cost": 8071.2,
+        "shipment_cost_tenths": 30712,
+        "shipment_cost": 3071.2,
+        "installation_cost": 5000.0,
+        "cuts_after_station_1based": [
+          6,
+          12,
+          18,
+          24
+        ],
+        "station_groups_1based_inclusive": [
+          [
+            1,
+            6
+          ],
+          [
+            7,
+            12
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            19,
+            24
+          ],
+          [
+            25,
+            30
+          ]
+        ],
+        "supermarket_loads": [
+          41,
+          28,
+          32,
+          41,
+          44
+        ],
+        "open_site_indices_1based": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    }
+  ],
+  "optimal_open_sites": 5,
+  "optimum_within_scope": {
+    "total_cost_tenths": 80712,
+    "total_cost": 8071.2,
+    "shipment_cost_tenths": 30712,
+    "shipment_cost": 3071.2,
+    "installation_cost": 5000.0,
+    "cuts_after_station_1based": [
+      6,
+      12,
+      18,
+      24
+    ],
+    "station_groups_1based_inclusive": [
+      [
+        1,
+        6
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        13,
+        18
+      ],
+      [
+        19,
+        24
+      ],
+      [
+        25,
+        30
+      ]
+    ],
+    "supermarket_loads": [
+      41,
+      28,
+      32,
+      41,
+      44
+    ],
+    "open_site_indices_1based": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

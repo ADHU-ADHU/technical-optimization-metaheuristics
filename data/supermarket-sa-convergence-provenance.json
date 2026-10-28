@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "destination": "docs/assets/supermarket-sa-reversal-convergence.png",
+  "destination_sha256": "0326e3bf632ade12a8c0a7c0d6e04531f96c32ae8252e072460452426169cf42",
+  "size_bytes": 136383,
+  "dimensions_pixels": [
+    1103,
+    866
+  ],
+  "source": {
+    "file": "Presentation V3.0.pptx",
+    "sha256": "49406d3f5913249ba2784c174ad9bb3631757e55e2f0c2477c6d6f947977ca18",
+    "slide_1based": 33,
+    "embedded_image": "ppt/media/image71.png",
+    "embedded_image_sha256": "e5c774378ee012b0132e811c0d363984360d9c25950eba99554702aee96a6f7e",
+    "embedded_image_dimensions_pixels": [
+      487,
+      364
+    ],
+    "presentation_pdf": "docs/presentation/technical-optimization-slides.pdf",
+    "presentation_pdf_sha256": "903102de9ffaf4c4436f0afa51aa565f727defea2993f482a1e41c338388990c",
+    "pdf_page_1based": 33
+  },
+  "derivation": {
+    "method": "Render only the original recorded SA cost-vs-iteration chart from PDF page 33 using pdftoppm. No pixels are repainted and no numerical trace is reconstructed.",
+    "render_dpi": 288,
+    "crop_pixels_at_render_dpi": {
+      "x": 207,
+      "y": 1235,
+      "width": 1103,
+      "height": 866
+    },
+    "crop_pdf_points": {
+      "x": 51.75,
+      "y": 308.75,
+      "width": 275.75,
+      "height": 216.5
+    },
+    "pdf_page_dimensions_points": [
+      960.009,
+      540
+    ],
+    "crop_reason": "Retain the complete cost chart, axis labels and terminal data tip; exclude slide heading and adjacent temperature panel.",
+    "command": "pdftoppm -f 33 -l 33 -singlefile -r 288 -x 207 -y 1235 -W 1103 -H 866 -png docs/presentation/technical-optimization-slides.pdf docs/assets/supermarket-sa-reversal-convergence"
+  },
+  "recorded_result": {
+    "method_label": "SA with exponential cooling and reverse mutation",
+    "visible_data_tip": {
+      "x": 688,
+      "y": 8106.4
+    },
+    "visible_x_axis_label": "Iteration",
+    "visible_y_axis_label": "Cost",
+    "reported_cooling_factor": 0.99,
+    "reported_neighbor_moves_per_temperature_level": 50,
+    "slide_text_rounded_cost": 8106,
+    "selection": "Lowest terminal SA cost reported across the experiment slides 27 through 33, using the more precise visible data tip where available.",
+    "reported_sa_terminal_costs_reviewed": [
+      {
+        "slide": 27,
+        "setting": "Linear cooling, alpha 1",
+        "reported_cost": 9772
+      },
+      {
+        "slide": 27,
+        "setting": "Linear cooling, alpha 0.8",
+        "reported_cost": 8140
+      },
+      {
+        "slide": 28,
+        "setting": "Initial temperature 100",
+        "reported_cost": 8325.6
+      },
+      {
+        "slide": 28,
+        "setting": "Initial temperature 1000",
+        "reported_cost": 8140
+      },
+      {
+        "slide": 29,
+        "setting": "Linear cooling with inner loop",
+        "reported_cost": 8168
+      },
+      {
+        "slide": 30,
+        "setting": "Exponential cooling, multiplicative form",
+        "reported_cost": 8162.4
+      },
+      {
+        "slide": 30,
+        "setting": "Exponential cooling, explicit initial-temperature form",
+        "reported_cost": 8210.4
+      },
+      {
+        "slide": 31,
+        "setting": "Script labeled hyperbolic cooling",
+        "reported_cost": 8120.8
+      },
+      {
+        "slide": 32,
+        "setting": "Fast cooling",
+        "reported_cost": 8143.2
+      },
+      {
+        "slide": 33,
+        "setting": "Exponential cooling with reverse mutation",
+        "reported_cost": 8106.4
+      },
+      {
+        "slide": 33,
+        "setting": "Exponential cooling comparison",
+        "reported_cost": 8162.4
+      }
+    ]
+  },
+  "corresponding_source_context": {
+    "file": "src/supermarket_sa/reversemutation.m",
+    "sha256": "b77f5b73a3009c31f2db02427044921dfc877e162a022b23e08047a33ff31ea1",
+    "trace_semantics": "The preserved script samples the current accepted solution cost once per temperature level, after 50 neighbor moves. The plotted cost omits the infeasibility penalty and is not a separately maintained best-ever value.",
+    "historical_seed_and_exact_script_version_known": false
+  },
+  "limitations": [
+    "This is a crop of a historical plot, not a new optimization run.",
+    "The full numerical SA series is not supplied; no points were digitized from pixels.",
+    "Lowest reported terminal cost does not certify the minimum transient point in the trace.",
+    "The figure alone does not verify final assignments, supermarket capacities, global optimality or equal-budget superiority.",
+    "The image retains the resolution and styling of the embedded historical chart; rendering at higher DPI does not create new measured detail."
+  ],
+  "validation": {
+    "visually_inspected": true,
+    "complete_cost_axes_and_data_tip_retained": true,
+    "adjacent_temperature_chart_excluded": true,
+    "opaque_rgb_image": true,
+    "numerical_trace_digitized": false,
+    "matlab_executed": false
+  }
+}

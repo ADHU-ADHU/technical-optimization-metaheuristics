@@ -30,13 +30,19 @@ The [assembly-line guide](docs/assembly-line.md) explains the decoder, actual op
 
 Thirty workstations generate **186 units** of material demand. Five candidate line-side supermarkets each have capacity **60 units**. The cost combines opening supply points with demand-weighted, round-trip Manhattan shipment distance.
 
-The SA experiments explore cooling schedules and neighborhood changes. The additional PSO implementation searches the same baseline assignment model with **100 particles and 200 iterations**. Both expose assignments, capacity loads, and cost information for inspection.
+The SA experiments explore cooling schedules and neighborhood changes. The custom PSO uses a **population of 100 particles**, while SA follows one current solution through successive neighbor moves. Both use the same demand, coordinates, and cost objective; their search rules and evaluation budgets differ.
 
-[![Archived supermarket PSO convergence](docs/assets/supermarket-pso-convergence.png)](docs/assets/supermarket-pso-convergence.png)
+| Population-based PSO | Best reported SA trial: reversal mutation |
+| --- | --- |
+| [![Archived PSO convergence](docs/assets/supermarket-pso-convergence.png)](docs/assets/supermarket-pso-convergence.png) | [![Recorded SA reversal convergence](docs/assets/supermarket-sa-reversal-convergence.png)](docs/assets/supermarket-sa-reversal-convergence.png) |
+| **€8,071.20**, first reached at iteration **36** of 200 | Terminal cost **€8,106.40**, marked at temperature level **688** |
+| 100 particle evaluations per iteration | 50 neighbor moves per temperature level |
 
-*Archived PSO convergence, ending at a recorded model cost of **8,071.2**. The [extracted trace](data/recorded-pso-convergence.csv) accompanies the original [MATLAB figure](data/supermarket-pso-convergence.fig). It is not a fresh benchmark or proof of global optimality.*
+*Historical runs: PSO reached a lower recorded cost in fewer plotted outer steps. The horizontal axes count different amounts of work, so this is not a controlled runtime comparison. The SA image preserves the original cost trace; it is not a reconstructed numerical series. [PSO data](data/recorded-pso-convergence.csv) · [SA image provenance](data/supermarket-sa-convergence-provenance.json).*
 
-See the [supermarket guide](docs/supermarket-location.md) for the cost model, variant settings, decoder restrictions, and comparison scope.
+An independent exact check confirms **€8,071.20 is optimal within the PSO decoder's contiguous, prefix-site allocation rules**. Allowing any subset of candidate sites gives a global optimum of **€7,349.60**, opening sites **1, 2, 4, and 5**. The [exact verification](docs/supermarket-verification.md) includes a mixed-integer linear model, an LP lower bound, and an exhaustive certificate.
+
+See the [supermarket guide](docs/supermarket-location.md) for variant settings, decoder restrictions, and comparison details.
 
 ## Steelmaking production planning
 

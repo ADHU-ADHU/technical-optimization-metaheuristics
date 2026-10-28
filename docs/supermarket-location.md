@@ -45,7 +45,9 @@ SA outputs temperature, current cost and supermarket-count plots, together with 
 
 ## Custom particle swarm optimization
 
-[supermarket_swarm_optimization.m](../src/supermarket_pso/supermarket_swarm_optimization.m) implements PSO directly:
+[supermarket_swarm_optimization.m](../src/supermarket_pso/supermarket_swarm_optimization.m) implements population-based PSO directly. Its particles explore multiple candidate allocations in each iteration, sharing personal and swarm incumbents. SA instead follows one current solution, proposing neighbor moves sequentially.
+
+PSO settings:
 
 - 100 particles with 30 random-key coordinates.
 - 200 iterations; cognitive and social coefficients both 1.
@@ -54,6 +56,26 @@ SA outputs temperature, current cost and supermarket-count plots, together with 
 
 Outputs include best cost `g_best(31)`, workstation assignment `g_aswstosup`, supermarket loads `g_td` and convergence vector `cost_every_iteration`. The saved [convergence figure](../data/supermarket-pso-convergence.fig) is also included. This implementation does not call MATLAB's `particleswarm` solver.
 
+## Recorded PSO and SA convergence
+
+The lowest reported SA terminal cost among the presentation's supermarket experiments comes from the reversal-mutation variant. Slide 33 rounds its result to 8,106; the chart's data tip gives **8,106.4 at outer step 688**. The PSO figure reaches **8,071.2 at iteration 36**, retaining that value through iteration 200. PSO therefore has the lower recorded terminal cost and reaches it in fewer plotted outer steps in these examples.
+
+| PSO | SA with reversal mutation |
+| --- | --- |
+| [![Archived PSO cost trace](assets/supermarket-pso-convergence.png)](assets/supermarket-pso-convergence.png) | [![Recorded reversal SA cost trace](assets/supermarket-sa-reversal-convergence.png)](assets/supermarket-sa-reversal-convergence.png) |
+| Best recorded cost: **€8,071.20** | Marked recorded cost: **€8,106.40** |
+| 100 particles per iteration | 50 neighbor proposals per temperature level |
+
+These are different units of work: one PSO iteration evaluates 100 particles, whereas one SA outer step makes 50 neighbor proposals before the next temperature update. The source also evaluates the initial PSO population. Fewer plotted steps alone do not measure wall-clock speed or establish a general ranking. The SA line is a current-state cost trace, while PSO records the swarm incumbent; the SA image has been extracted from the historical slide without inventing underlying data points. See [SA image provenance](../data/supermarket-sa-convergence-provenance.json) and the [exact PSO trace](../data/recorded-pso-convergence.csv).
+
+## Exact optimality check
+
+Exhaustively checking **27,405 contiguous-prefix partitions**, of which **3,636 satisfy capacity**, confirms **€8,071.20** as the minimum in the baseline PSO decoder's feasible allocation space. Its optimal five-site loads are `[41, 28, 32, 41, 44]`, matching the presentation's reported PSO loads. This certifies the recorded result's value within that encoding; it does not imply that PSO always reaches an optimum.
+
+The supplied location model does not explicitly require prefix-only opening or contiguous groups. A separate mixed-integer linear program allows any subset of the five sites and any whole-workstation assignment. It proves a lower global optimum of **€7,349.60**, using sites **1, 2, 4, 5** with loads `[41, 43, 0, 58, 44]`. Skipping site 3 is the key allocation that the original PSO decoder cannot represent. A six-subset enumeration independently certifies this optimum with exact integer costs. The continuous LP relaxation gives **€6,960.941538** as a lower bound, not a valid discrete allocation.
+
+[Full formulation, assignments, certificates, and reproduction commands](supermarket-verification.md)
+
 ## Interpreting comparisons
 
 The original scripts are preserved. Before treating outputs as benchmark results, account for these implementation details:
@@ -61,6 +83,6 @@ The original scripts are preserved. Before treating outputs as benchmark results
 - Swap and reversal variants change decoded assignments without recalculating capacity loads. Reversal also leaves the random-key representation unchanged. Validate their final loads independently.
 - SA reports the current terminal state, and its plotted cost omits the capacity penalty. A finite plot value alone does not establish feasibility or best-so-far performance.
 - PSO compares a full particle row against a scalar best cost when updating incumbents. It also leaves positions and velocities unclamped and hard-codes cost coefficients in its fitness expression.
-- Runs have no fixed random seed. The variants use different move budgets, thresholds and acceptance rules, so the traces do not establish a controlled algorithm ranking.
+- The physical problem data and cost objective are shared. Runs have no fixed random seed, and variants use different numbers of candidate evaluations, decoding thresholds, and acceptance rules. The observed PSO advantage above describes those saved runs; a controlled algorithm ranking would require repeated feasible runs under a shared evaluation or time budget.
 
-All these scripts use base MATLAB operations. No new MATLAB runs were performed while preparing this repository, and no global-optimality claim is made.
+All these scripts use base MATLAB operations. The new optimality checks use Python enumeration and SciPy/HiGHS; no new MATLAB heuristic runs were performed. Original MATLAB files remain unchanged.

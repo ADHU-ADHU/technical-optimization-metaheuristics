@@ -11,7 +11,7 @@ The opening ten slides review Fathi, Rodríguez, Fontes and Alvarez's paper, [*A
 The remaining slides document historical project experiments. Use the component notes for the behavior of the preserved source:
 
 - [Assembly-line GA](../assembly-line.md): the recorded result is nine stations. The workload lower bound is eight; neither value certifies global optimality.
-- [Supermarket SA and PSO](../supermarket-location.md): the recorded PSO cost is 8,071.2. A convergence figure alone cannot establish that the final allocation satisfies capacity constraints or prove a ranking across algorithms.
+- [Supermarket SA and PSO](../supermarket-location.md): the recorded PSO cost is 8,071.2; the lowest reported SA terminal cost is 8,106.4 in the reversal trial. A figure alone cannot establish capacity feasibility or a general algorithm ranking. The new [exact verification](../supermarket-verification.md) separately proves 8,071.2 optimal within the PSO decoder and 7,349.6 optimal when arbitrary site subsets are allowed.
 - [Steelmaking LP](../steelmaking-lp.md): the recorded $4,300 optimum was independently checked from the source matrices with SciPy/HiGHS. MATLAB and Excel Solver were not rerun during publication.
 
 Two slide labels need care when reproducing experiments. Slide 19's population counts sum to 102 despite stating a population of 100. Slide 31 labels a schedule “Hyperbolic”; the corresponding `Hyperbolic.m` actually compounds a geometric temperature update. The code notes document the implemented counts, cooling formulas, and other differences between variants. The historical slides have been retained without rewriting these labels.

@@ -4,7 +4,7 @@
 
 The assembly-line GA and supermarket SA/PSO implementations use ordinary **base MATLAB** operations. They implement the search loops directly and do not call the Global Optimization Toolbox `ga` or `particleswarm` solvers.
 
-The two steelmaking models use `linprog` and require **MATLAB Optimization Toolbox**. The optional independent LP check uses **Python 3, NumPy, and SciPy**. No Simulink model, external dataset, or GPU is required by these cases.
+The two steelmaking models use `linprog` and require **MATLAB Optimization Toolbox**. The optional independent LP/MILP checks use **Python 3, NumPy, and SciPy >= 1.9**. The supermarket partition check uses only Python's standard library. No Simulink model, external dataset, or GPU is required by these cases.
 
 MATLAB was unavailable during repository preparation. The original scripts have been inspected and preserved, but their execution on a particular MATLAB release has not been newly verified.
 
@@ -44,7 +44,7 @@ hours_by_size_machine = reshape(x,3,4).';
 
 Both LP models have the same minimum cost, but a solver can return different optimal allocations. See the [steelmaking model](steelmaking-lp.md) for constraints, units, and workbook details.
 
-## Optional independent LP verification
+## Optional independent optimization verification
 
 From the repository root in a terminal:
 
@@ -53,9 +53,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install numpy scipy
 python tools/check_steel_lp.py
+python tools/check_supermarket_partition.py > /tmp/supermarket-partition-check.json
+python tools/check_supermarket_milp.py --output /tmp/supermarket-milp-check.json
 ```
 
-This tool parses the numerical matrices from both original MATLAB scripts and solves them with SciPy/HiGHS. It checks equivalent variable ordering, nonnegativity, demand and machine-hour feasibility, the **$4,300** optimum, a dual certificate, and two historical allocations. It does not run MATLAB or Excel.
+The steelmaking tool parses the numerical matrices from both original MATLAB scripts and solves them with SciPy/HiGHS. It checks equivalent variable ordering, nonnegativity, demand and machine-hour feasibility, the **$4,300** optimum, a dual certificate, and two historical allocations.
+
+The supermarket partition tool exactly enumerates the baseline decoder's contiguous allocations on prefix sites, confirming its **€8,071.20** optimum. The MILP tool allows any subset of sites, checks the **€7,349.60** global optimum and a matching exact six-subset certificate, and solves the continuous LP relaxation as a lower bound. See [the formulation and results](supermarket-verification.md). These tools do not run MATLAB or Excel, or rerun the historical heuristics.
 
 ## Recorded material
 
